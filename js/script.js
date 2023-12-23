@@ -24,7 +24,7 @@
 'use strict'
 // 1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
 // 'Сколько фильмов вы уже посмотрели?'
-let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 // 2) Создать объект personalMovieDB и в него поместить такие свойства:
 //     - count - сюда передается ответ на первый вопрос
 //     - movies - в это свойство поместить пустой объект
@@ -49,7 +49,11 @@ const personalMovieDB = {
 //         'logan': '8.1'
 //     }
 
-let lastMovie = prompt('Один из последних просмотренных фильмов?', '');
-let ratingMovie = prompt('На сколько оцените его?', '');
+let a = prompt('Один из последних просмотренных фильмов?', '');
+let b = prompt('На сколько оцените его?', '');
+let c = prompt('Один из последних просмотренных фильмов?', '');
+let d = prompt('На сколько оцените его?', '');
 
-personalMovieDB.movies.lastMovie = ratingMovie;
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+console.log(personalMovieDB);
