@@ -33,6 +33,19 @@
 
 // 4) Потренироваться и переписать цикл еще двумя способами*/
 
+// <<<<<<<<<<<<                                                               >>>>>>>>>>>>
+
+// 1) Первую часть задания повторить по уроку
+
+// 2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+// false - выводит в консоль главный объект программы
+
+// 3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+// "Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+// genres
+
+// P.S. Функции вызывать не обязательно*/
+
 'use strict'
 
 
@@ -45,7 +58,9 @@ do {
     numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
     if (!checkItem(numberOfFilms) || isNaN(numberOfFilms) || +numberOfFilms < 0) alert('Произошла ошибка');
 } while (!(checkItem(numberOfFilms) && !isNaN(numberOfFilms) && +numberOfFilms > 0));
-if (+numberOfFilms < 10) {
+
+function detectPersonalLevel(){
+    if (+numberOfFilms < 10) {
     alert('Просмотрено довольно мало фильмов');
 } else if (+numberOfFilms > 9 && +numberOfFilms <31){
     alert('Вы классический зритель');
@@ -54,6 +69,9 @@ if (+numberOfFilms < 10) {
 } else {
     alert('Произошла ошибка');
 }
+}
+
+detectPersonalLevel();
 
 const personalMovieDB = {
     count: +numberOfFilms,
@@ -63,14 +81,19 @@ const personalMovieDB = {
     privat: false
 }
 
-for (let i = 0; i < 2; i++) {
+function rememberMyFilms(){
+    for (let i = 0; i < 2; i++) {
     let a = prompt('Один из последних просмотренных фильмов?', '');
     let b = prompt('На сколько оцените его?', '');
+
     if (checkItem(a) && checkItem(b)) {
         personalMovieDB.movies[a] = b;
     } else {
         i--;
     }
+    }
 }
+
+rememberMyFilms();
 
 console.log(personalMovieDB);
