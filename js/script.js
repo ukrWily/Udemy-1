@@ -108,3 +108,6 @@ function showMyDB(hidden){
 }
 showMyDB(personalMovieDB.privat);
 // console.log(personalMovieDB);
+
+// ============================================================================================================================
+
