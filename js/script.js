@@ -1,26 +1,26 @@
 
 
 'use strict'
-// <<<<<<<<<<<<  function checkItem  >>>>>>>>>>>>
+// (function)>>>     checkItem     <<<(function)
 function checkItem(el){
     console.log(el);
     return (el && el !== 'null' && el.trim().length > 0 && el.trim().length < 50);
 }
 
-// <<<<<<<<<<<<  const personalMovieDB  >>>>>>>>>>>>
+// (variable)>>>     personalMovieDB     <<<(variable)
 const personalMovieDB = {
     count: 0,
     movies: {},
     actors: {},
     genres: [],
     privat: false,
-    // <<<<<<<<<<<<  let numberOfFilms  >>>>>>>>>>>>
+    // (method)>>>     start     <<<(method)
     start(){
         do {
             this.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
             } while (!(this.count !== 'null' && !isNaN(this.count) && +this.count > 0));
     },
-    // <<<<<<<<<<<<  method detectPersonalLevel  >>>>>>>>>>>>
+    // (method)>>>     detectPersonalLevel     <<<(method)
     detectPersonalLevel(){
         if (this.count < 10) {
                 alert('Просмотрено довольно мало фильмов');
@@ -32,12 +32,12 @@ const personalMovieDB = {
                 alert('Произошла ошибка');
             }
     },
-    // <<<<<<<<<<<<  method rememberMyFilms  >>>>>>>>>>>>
+    // (method)>>>     rememberMyFilms     <<<(method)
     rememberMyFilms(){
         for (let i = 0; i < 2; i++) {
             let a = prompt('Один из последних просмотренных фильмов?', '');
             let b = prompt('На сколько оцените его?', '');
-            console.log((checkItem(a) && checkItem(b)));
+
             if (checkItem(a) && checkItem(b)) {
                 this.movies[a.trim()] = b.trim();
             } else {
@@ -45,7 +45,7 @@ const personalMovieDB = {
             }
         }
     },
-    // <<<<<<<<<<<<  method writeYourGenres  >>>>>>>>>>>>
+    // (method)>>>     writeYourGenres     <<<(method)
     writeYourGenres(){
         for (let i = 0; i < 3; i++) {
             let answer = prompt(`Ваш любимый жанр под номером ${i + 1}`, '');
@@ -59,13 +59,13 @@ const personalMovieDB = {
             console.log(`Любимый жанр #${i + 1} - это ${el}`);
         })
     },
-    // <<<<<<<<<<<<  method showMyDB  >>>>>>>>>>>>
+    // (method)>>>     showMyDB     <<<(method)
     showMyDB(hidden){
         if (!hidden) {
             console.log(this);
         }
     },
-    // <<<<<<<<<<<<  method toggleVisibleMyDB  >>>>>>>>>>>>
+    // (method)>>>     toggleVisibleMyDB     <<<(method)
     toggleVisibleMyDB(){
         return this.privat === true ? this.privat = false : this.privat = true;
     }
