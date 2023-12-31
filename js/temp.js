@@ -167,42 +167,94 @@
 
 // <<<<<<<<<<<<    Продвинутая задача на работу с объектами и массивами    >>>>>>>>>>>>
 
-const shoppingMallData = {
-    shops: [
-        {
-            width: 10,
-            length: 5
-        },
-        {
-            width: 15,
-            length: 7
-        },
-        {
-            width: 20,
-            length: 5
-        },
-        {
-            width: 8,
-            length: 10
-        }
-    ],
-    height: 5,
-    moneyPer1m3: 30,
-    budget: 50000
-}
+// const shoppingMallData = {
+//     shops: [
+//         {
+//             width: 10,
+//             length: 5
+//         },
+//         {
+//             width: 15,
+//             length: 7
+//         },
+//         {
+//             width: 20,
+//             length: 5
+//         },
+//         {
+//             width: 8,
+//             length: 10
+//         }
+//     ],
+//     height: 5,
+//     moneyPer1m3: 30,
+//     budget: 50000
+// }
 
-// (function)>>>    isBudgetEnough      <<<(function)
-function isBudgetEnough(data) {
-    let totalArea = 0;
-    let totalVolume = 0;
-    let budgetEnough = false;
-    data.shops.forEach(el => {
-      totalArea += +el.width * +el['length'];
-      totalVolume += ((+el.width * +el['length']) * +data.height);
-    });
-    budgetEnough = totalVolume * data.moneyPer1m3 < data.budget;
-    return budgetEnough ? 'Бюджета достаточно' : 'Бюджета недостаточно';
-}
+// // (function)>>>    isBudgetEnough      <<<(function)
+// function isBudgetEnough(data) {
+//     let totalArea = 0;
+//     let totalVolume = 0;
+//     let budgetEnough = false;
+//     data.shops.forEach(el => {
+//       totalArea += +el.width * +el['length'];
+//       totalVolume += ((+el.width * +el['length']) * +data.height);
+//     });
+//     budgetEnough = totalVolume * data.moneyPer1m3 < data.budget;
+//     return budgetEnough ? 'Бюджета достаточно' : 'Бюджета недостаточно';
+// }
 
-console.log(isBudgetEnough(shoppingMallData));
+// console.log(isBudgetEnough(shoppingMallData));
+
+// <<<<<<<<<<<<    список учеников    >>>>>>>>>>>>
+
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+// function sortStudentsByGroups(arr) {
+//   let teams = [];
+//   let team = [];
+//   let tail = [];
+//   let i = 0;
+//   const more = arr.length <= 9 ? '-' : '';
+  
+//   arr.sort().forEach((el, index) => {
+//     if (index > 8) tail.push(el);
+//     if (i === 0){
+//       team = [];
+//       team.push(el);
+//       i++;
+//     } else if (i === 2){
+//       team.push(el);
+//       teams.push(team);
+//       i = 0;
+//     } else {
+//       team.push(el);
+//       i++;
+//     }
+//   });
+//   teams = [...teams, `Оставшиеся студенты: ${more}${tail.join(', ')}`];
+//   return teams;
+// }
+
+// console.log(sortStudentsByGroups(students));
+
+// <<<<<<<<<<<<    teacher's variant    >>>>>>>>>>>>
+
+// function sortStudentsByGroups(arr) {
+//     arr.sort();
+//     const a = [], b = [], c = [], rest = [];
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (i < 3) {
+//             a.push(arr[i]);
+//         } else if (i < 6) {
+//             b.push(arr[i]);
+//         } else if (i < 9) {
+//             c.push(arr[i]);
+//         } else {
+//             rest.push(arr[i]);
+//         }
+//     }
+//     return [a,b,c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`]
+// }
 
